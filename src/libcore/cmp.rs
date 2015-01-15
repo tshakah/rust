@@ -92,8 +92,8 @@ pub trait PartialEq<Rhs: ?Sized = Self> {
 /// - transitive: `a == b` and `b == c` implies `a == c`.
 #[stable]
 pub trait Eq: PartialEq<Self> {
-    // FIXME #13101: this method is used solely by #[deriving] to
-    // assert that every component of a type implements #[deriving]
+    // FIXME #13101: this method is used solely by #[derive] to
+    // assert that every component of a type implements #[derive]
     // itself, the current deriving infrastructure means doing this
     // assertion without using a method on this trait is nearly
     // impossible.

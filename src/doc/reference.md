@@ -2434,13 +2434,13 @@ There are three different types of inline attributes:
 
 ### Deriving
 
-The `deriving` attribute allows certain traits to be automatically implemented
+The `derive` attribute allows certain traits to be automatically implemented
 for data structures. For example, the following will create an `impl` for the
 `PartialEq` and `Clone` traits for `Foo`, the type parameter `T` will be given
 the `PartialEq` or `Clone` constraints for the appropriate `impl`:
 
 ```
-#[deriving(PartialEq, Clone)]
+#[derive(PartialEq, Clone)]
 struct Foo<T> {
     a: int,
     b: T
@@ -2462,7 +2462,7 @@ impl<T: PartialEq> PartialEq for Foo<T> {
 }
 ```
 
-Supported traits for `deriving` are:
+Supported traits for `derive` are:
 
 * Comparison traits: `PartialEq`, `Eq`, `PartialOrd`, `Ord`.
 * Serialization: `Encodable`, `Decodable`. These require `serialize`.
